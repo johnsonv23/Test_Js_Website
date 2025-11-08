@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body style="font-size: large;">
+
+    <h2>1. Switch</h2>
+    <p id="s1"></p>
+    <p id="s2"></p>
+
+    <h2>2. Innertext vs innerHTML</h2>
+    <p id="i1"></p>
+    <p id="i2"></p>
+
+    <h2>3. Prime Numbers</h2>
+    <p id="p1"></p>
+
+    <h2>4. Switch (even or odd)</h2>
+    <p id="e1"></p>
+    <p id="e2"></p>
+
+    <h2>5. Table</h2>
+    <p id="t1"></p>
+
+    <h2>6. do while</h2>
+    <p id="d1"></p>
+
+    <h2>7. IF ELSE age</h2>
+    <p id="f1"></p>
+    <p id="f2"></p>
+
+    <script>
+        {
+            //switch
+            let text="";
+            let color="yellow";
+
+            switch(color){
+                case "red":
+                    text="STOP!!!";
+                    break;
+                case "yellow":
+                    text="READY!";
+                    break;
+                case "green":
+                    text="GO GO GO!";
+                    break;
+            }
+            document.getElementById("s1").innerHTML="Light : "+color;
+            document.getElementById("s2").innerHTML=text;
+        }
+
+        {
+            //Innertext vs InnerHTML
+            let text1="This text is printed using innertext, it uses by default p2 tag";
+            document.getElementById("i1").innerText =text1;
+            document.getElementById("i2").innerHTML="<h3>This text is printed using innerhtml by tag h2 </h3>"
+        }
+
+        {
+            //prime numbers
+            let n=50;
+            let text="";
+            for(let i=2;i<=n;i++)
+            {
+                let x=0;
+                for(let j=1;j<=i;j++)
+                {
+                    
+                    if(i%j==0)
+                    {
+                        x++;
+                    }
+
+                }
+
+                if(x==2)
+                {
+                    text +=i+"<br>";
+                }
+            }
+
+            document.getElementById("p1").innerHTML=text;
+        }
+
+        {
+            //switch even or odd
+            let num=35;
+            let text="";
+            switch(num%2){
+
+                case 0 :
+                    text="Even Number";
+                    break;
+                
+                default:
+                    text="Odd Number";
+                    break;
+                
+            }
+            
+            document.getElementById("e1").innerHTML="Number :"+num;
+            document.getElementById("e2").innerHTML=text;
+
+        }
+
+        {
+            //Table
+            let num=7;
+            let text="";
+
+            for(i=1;i<=10;i++)
+            {
+                text+=num+" * "+i+" = "+(num*i)+"<br>";
+            }
+
+            document.getElementById("t1").innerHTML=text;
+        }
+
+        {
+            //do while print 1-100
+            let n=10;
+            let text="";
+            do
+            {
+                text+=n+"<br>";
+                n++;
+            }while(n<=100)
+
+            document.getElementById("d1").innerHTML=text;
+        }
+
+        {
+            let age=17;
+            let text="";
+
+            if(age>=18)
+            {
+                text="Eligible";
+            }
+            else
+            {
+                text="NOT Eligible";
+            }
+            document.getElementById("f1").innerHTML="Age ="+age;
+            document.getElementById("f2").innerHTML=text;
+        }
+    </script>
+</body>
+</html>
